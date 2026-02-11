@@ -1,0 +1,86 @@
+/* Mobile-first, simple, clean UI for booking and viewing appointments */
+
+:root{
+  --bg:#f6f7fb;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --accent:#0ea5a4;
+  --accent-2:#0369a1;
+  --danger:#ef4444;
+  --radius:12px;
+  --max-width:980px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:linear-gradient(180deg,#f8fafc 0%,var(--bg) 100%);
+  color:#111827;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+}
+
+.container{
+  max-width:var(--max-width);
+  margin:1rem auto;
+  padding:0 1rem;
+}
+
+.topbar{
+  background:var(--card);
+  box-shadow:0 1px 8px rgba(2,6,23,0.06);
+  border-bottom-left-radius:10px;
+  border-bottom-right-radius:10px;
+  padding:0.75rem 0;
+}
+.topbar .container{display:flex;align-items:center;justify-content:space-between}
+.brand{margin:0;font-size:1.125rem;letter-spacing:0.2px}
+
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:1rem;
+  margin:1rem 0;
+  box-shadow:0 6px 20px rgba(2,6,23,0.04);
+}
+
+.card.small{max-width:320px}
+.list-placeholder{min-height:72px;padding:0.5rem;border-radius:8px;background:#fbfdff;border:1px solid #eef2ff;color:var(--muted)}
+
+.row{display:flex;flex-direction:column;margin-bottom:0.75rem}
+.row.inline{display:flex;gap:0.75rem}
+.row.inline > div{flex:1}
+label{font-size:0.8rem;color:var(--muted);margin-bottom:0.35rem}
+input,select,textarea{
+  padding:0.6rem 0.75rem;border-radius:8px;border:1px solid #e6e9ef;font-size:0.95rem;
+  background:transparent;outline:none;
+}
+input:focus,select:focus,textarea:focus{box-shadow:0 0 0 3px rgba(14,165,164,0.08);border-color:var(--accent-2)}
+
+.actions{display:flex;gap:0.5rem;align-items:center}
+.btn{border:0;padding:0.5rem 0.8rem;border-radius:10px;background:transparent;cursor:pointer;font-weight:600}
+.btn.primary{background:var(--accent);color:white}
+.btn.link{background:transparent;color:var(--accent-2)}
+.btn:focus{outline:3px solid rgba(3,105,161,0.12)}
+.form-msg{margin-top:0.5rem;color:var(--muted)}
+
+.appointment{
+  display:flex;align-items:center;justify-content:space-between;padding:0.6rem;border-radius:8px;border:1px solid #eef3ff;margin-bottom:0.5rem;
+}
+.appt-info{display:flex;gap:0.75rem;align-items:center}
+.avatar{
+  width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:white;display:flex;align-items:center;justify-content:center;font-weight:700;
+  font-size:0.95rem;
+}
+.appt-meta{font-size:0.92rem}
+.appt-meta small{display:block;color:var(--muted);font-size:0.78rem}
+
+.footer{padding:1rem 0;color:var(--muted);text-align:center;font-size:0.9rem}
+
+@media(min-width:920px){
+  #app{display:grid;grid-template-columns:1fr 420px;gap:1rem}
+  .card.small{grid-column:2}
+}

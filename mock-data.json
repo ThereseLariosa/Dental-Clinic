@@ -1,0 +1,33 @@
+{
+  "services": [
+    { "serviceId": 1, "name": "Dental Cleaning", "durationMinutes": 30, "price": 500 },
+    { "serviceId": 2, "name": "Tooth Extraction", "durationMinutes": 45, "price": 2000 },
+    { "serviceId": 3, "name": "Teeth Whitening", "durationMinutes": 60, "price": 4500 }
+  ],
+  "dentists": [
+    { "dentistId": 1, "firstName": "Ana", "lastName": "Santos", "specialization": "General" },
+    { "dentistId": 2, "firstName": "Miguel", "lastName": "Reyes", "specialization": "Orthodontist" }
+  ],
+  "appointments": [
+    {
+      "appointmentId": 101,
+      "patient": { "firstName": "Juan", "lastName": "Dela Cruz", "email": "juan@example.com" },
+      "dentist": { "firstName": "Ana", "lastName": "Santos" },
+      "service": { "name": "Dental Cleaning" },
+      "scheduledStart": "2025-12-12T09:30:00.000Z",
+      "scheduledEnd": "2025-12-12T10:00:00.000Z",
+      "status": "Confirmed",
+      "notes": ""
+    },
+    {
+      "appointmentId": 102,
+      "patient": { "firstName": "Maria", "lastName": "Lopez" },
+      "dentist": { "firstName": "Miguel", "lastName": "Reyes" },
+      "service": { "name": "Tooth Extraction" },
+      "scheduledStart": "2025-12-12T11:00:00.000Z",
+      "scheduledEnd": "2025-12-12T11:45:00.000Z",
+      "status": "Pending",
+      "notes": "Bring previous x-rays"
+    }
+  ]
+}

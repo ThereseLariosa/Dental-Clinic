@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dental Clinic — Booking</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <h1 class="brand">SmileCare Dental</h1>
+      <nav aria-label="Primary">
+        <button id="open-booking" class="btn">Book Appointment</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" id="app">
+    <section aria-labelledby="upcoming-title" class="card">
+      <h2 id="upcoming-title">Upcoming Appointments</h2>
+      <div id="appointments-list" class="list-placeholder">Loading appointments…</div>
+    </section>
+
+    <section aria-labelledby="book-title" class="card" id="booking-card">
+      <h2 id="book-title">Book an Appointment</h2>
+
+      <form id="booking-form" autocomplete="off" novalidate>
+        <div class="row">
+          <label for="patient-first">First name</label>
+          <input id="patient-first" name="firstName" required />
+        </div>
+
+        <div class="row">
+          <label for="patient-last">Last name</label>
+          <input id="patient-last" name="lastName" required />
+        </div>
+
+        <div class="row">
+          <label for="patient-email">Email</label>
+          <input id="patient-email" name="email" type="email" required />
+        </div>
+
+        <div class="row">
+          <label for="service-select">Service</label>
+          <select id="service-select" name="serviceId" required>
+            <option value="">Loading services…</option>
+          </select>
+        </div>
+
+        <div class="row">
+          <label for="dentist-select">Dentist</label>
+          <select id="dentist-select" name="dentistId" required>
+            <option value="">Loading dentists…</option>
+          </select>
+        </div>
+
+        <div class="row inline">
+          <div>
+            <label for="date">Date</label>
+            <input id="date" name="date" type="date" required />
+          </div>
+
+          <div>
+            <label for="time">Time</label>
+            <input id="time" name="time" type="time" required />
+          </div>
+        </div>
+
+        <div class="row">
+          <label for="notes">Notes (optional)</label>
+          <textarea id="notes" name="notes" rows="3" placeholder="e.g. allergies, previous treatment"></textarea>
+        </div>
+
+        <div class="row actions">
+          <button type="submit" class="btn primary">Confirm Booking</button>
+          <button type="button" id="reset-form" class="btn link">Reset</button>
+        </div>
+
+        <div id="form-msg" role="status" aria-live="polite" class="form-msg"></div>
+      </form>
+    </section>
+
+    <section aria-labelledby="help-title" class="card small">
+      <h3 id="help-title">Quick notes</h3>
+      <ul>
+        <li>Mock mode: if the API isn't available the page will use local mock-data.json.</li>
+        <li>Open browser console to see API requests and errors.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© <span id="year"></span> SmileCare Dental</div>
+  </footer>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
